@@ -1,0 +1,372 @@
+.navbar {
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    z-index: 100;
+    box-shadow: 0px 2px 5px #ffffff;
+    animation: slideDown 0.5s;
+    flex-wrap: wrap;
+}
+
+.navbar .sweet_logo {
+    width: 130px;
+    cursor: pointer;
+    position: relative;
+}
+
+.logo-and-shop {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    color: #49557e;
+    font-size: 18px;
+    font-weight: 500;
+    align-items: center;
+    margin-left: 40px;
+    flex: 1 1 auto;
+    padding-left: 20px;
+    border-left: 2px solid #eee;
+    overflow-x: auto;
+
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-right: 20px;
+    position: relative;
+    flex-shrink: 0;
+
+}
+
+.navbar button {
+    background: transparent;
+    font-size: 16px;
+    color: #49557e;
+    border: 1px solid tomato;
+    padding: 10px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.5s;
+    font-weight: 500;
+    background-color: #ff6347;
+    box-shadow: 0px 4px 8px #ff634733;
+    user-select: none;
+    outline: none;
+    margin-left: 20px;
+    margin-right: 10px;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+
+}
+
+.navbar button:hover {
+    background-color: #fff4f2;
+    color: #ff6347;
+    box-shadow: 0px 6px 12px #ff634744;
+    border: 1px solid #ff6347;
+    transform: translateY(-2px);
+
+}
+
+.navbar .active {
+    padding-bottom: 2px;
+    border-bottom: 2px solid #49557e;
+    color: #333;
+    font-weight: 600;
+
+}
+
+.shop_text {
+    color: #3b1610;
+    /* use correct property for italic */
+    font-style: italic;
+    font-weight: 800;
+    font-size: 20px;
+    /* position relative to its container (logo area) instead of global absolute offsets */
+    position: relative;
+    display: inline-block;
+    margin-left: 8px;
+    vertical-align: middle;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    user-select: none;
+    opacity: 0.9;
+    cursor: default;
+}
+
+.navbar li {
+    cursor: pointer;
+    white-space: nowrap;
+    transition: 0.3s;
+    padding: 5px 8px;
+    user-select: none;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+    display: inline-flex;
+    align-items: center;
+    height: 36px;
+}
+
+.navbar-search-icon {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+
+
+}
+
+.navbar-search-icon .dot {
+    position:absolute;
+    min-width: 10px;
+    min-height: 10px;
+    background-color: tomato;
+    border-radius: 5px;
+    top: -8px;
+    right: -8px;
+    border: 2px solid white;
+    animation: pulse 2s infinite;
+
+
+}
+
+@media (max-width: 1050px) {
+    .navbar {
+        flex-direction: row;
+        align-items: center;
+        padding: 8px 12px;
+        gap: 10px;
+    }
+
+    .navbar-menu {
+        margin-left: 0;
+        padding-left: 0;
+        border-left: none;
+        gap: 12px;
+        overflow-x: auto;
+        width: auto;
+        flex-basis: 60%;
+    }
+
+    .navbar-right {
+        margin-right: 0;
+        gap: 20px;
+        width: auto;
+        justify-content: flex-end;
+    }
+
+    .navbar button {
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+
+    .navbar .sweet_logo {
+        width: 110px;
+    }
+    .shop_text {
+        font-size: 18px;
+        margin-left: 6px;
+    }
+}
+@media (max-width: 900px) {
+    .navbar {
+        padding: 8px 10px;
+    }
+
+    .navbar-menu {
+        gap: 10px;
+    }
+
+    .navbar button {
+        padding: 6px 15px;
+        font-size: 12px;
+    }
+
+    .navbar .sweet_logo {
+        width: 90px;
+    }
+    .navbar-right img {
+        width: 25px;
+    }
+    .shop_text {
+        font-size: 16px;
+        display: block;
+        margin-left: 0;
+        margin-top: 4px;
+    }
+    /* allow menu items to wrap on very small screens */
+    .navbar-menu {
+        gap: 8px;
+        flex-basis: 100%;
+        padding-left: 0;
+        margin-top: 8px;
+        border-left: none;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+/* Small phones: stack and ensure menu items are visible and icons scale */
+@media (max-width: 600px) {
+    .navbar {
+        /* allow menu rows and right-side controls to stack */
+        align-items: flex-start;
+        padding: 8px 10px;
+        gap: 6px;
+    }
+
+    .logo-and-shop { order: 1; }
+
+    .navbar-menu {
+        order: 2;
+        flex-basis: 100%;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: flex-start;
+        margin-top: 6px;
+        padding-left: 0;
+        border-left: none;
+        overflow-x: visible;
+    }
+
+    .navbar-menu a, .navbar-menu .active {
+        font-size: 14px;
+        padding: 6px 8px;
+    }
+
+    .navbar-right {
+        order: 3;
+        width: auto;
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-top: 0;
+        margin-left: auto; /* push icons to far right of the navbar row */
+    }
+
+    .navbar-right img, .navbar-search-icon img, .navbar .sweet_logo {
+        /* keep images proportional and small on tiny screens */
+        width: auto;
+        max-width: 40px;
+        height: auto;
+    }
+
+    .navbar button {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    .shop_text {
+        font-size: 14px;
+    }
+
+    /* ensure the logo+shop and icons sit on same row */
+    .navbar {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+    .logo-and-shop {
+        flex: 0 0 auto;
+    }
+
+    /* Hide the full menu text on very small screens; keep icons and logo visible */
+    .navbar-menu {
+        display: none;
+    }
+}
+/* Medium devices (tablets landscape, small laptops) */
+@media (min-width: 901px) and (max-width: 1200px) {
+    .navbar {
+        padding: 12px 20px;
+        /* keep the navbar on a single horizontal row */
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+    .navbar .sweet_logo {
+        width: 150px;
+    }
+    .shop_text {
+        font-size: 24px;
+    }
+    .logo-and-shop {
+        flex: 0 0 auto;
+        margin-right: 16px;
+    }
+    .navbar-menu {
+        /* allow the menu to shrink so items stay on one row */
+        flex: 1 1 auto;
+        min-width: 0;
+        display: flex;
+        justify-content: center;
+        gap: 22px;
+        font-size: 20px;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    .navbar-menu a {
+        display: inline-block;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .navbar-right {
+        flex: 0 0 auto;
+        margin-left: auto;
+    }
+    .navbar-right img, .navbar-search-icon img {
+        max-width: 36px;
+    }
+    .navbar button {
+        padding: 12px 36px;
+        font-size: 15px;
+    }
+}
+
+.navbar-profile {
+    position: relative;
+}
+.nav-profile-dropdown {
+    position: absolute;
+    display: none;
+    right: 0;
+    z-index: 1;
+}
+.navbar-profile:hover .nav-profile-dropdown {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff2ef;
+    padding: 12px 25px;
+    border-radius: 4px;
+    border: 1px solid tomato;
+    outline: 2px solid white;
+    list-style: none;
+}
+
+.nav-profile-dropdown li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+.nav-profile-dropdown img {
+    width: 20px;
+}
+.nav-profile-dropdown li:hover {
+    color: tomato;
+}
