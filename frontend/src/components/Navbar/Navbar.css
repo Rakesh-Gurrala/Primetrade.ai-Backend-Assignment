@@ -95,7 +95,7 @@
     /* use correct property for italic */
     font-style: italic;
     font-weight: 800;
-    font-size: 20px;
+    font-size: 10px;
     /* position relative to its container (logo area) instead of global absolute offsets */
     position: relative;
     display: inline-block;

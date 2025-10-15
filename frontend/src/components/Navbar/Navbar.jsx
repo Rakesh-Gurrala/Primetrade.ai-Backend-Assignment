@@ -20,7 +20,7 @@ const Navbar = ({setShowLogin}) => {
     <div className='navbar'>
       <div className="logo-and-shop">
           <Link to='/'><img src={assets.sweets_logo} alt="" className='sweet_logo' /> </Link>
-          <div className='shop_text'>Shop</div>
+          <div className='shop_text'>Products</div>
         </div>
       
       <ul className="navbar-menu">
